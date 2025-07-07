@@ -1,3 +1,6 @@
+
+# These define the structure of request and response data used in the API.
+
 import uuid
 from pydantic import BaseModel
 from typing import Optional, List
@@ -44,6 +47,7 @@ class TicketBase(BaseModel):
     contact_id: Optional[uuid.UUID ] = None  
 
 class TicketCreate(TicketBase):
+    contact: Optional[Contact]
     pass
 
 class Ticket(TicketBase):
